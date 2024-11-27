@@ -1,0 +1,17 @@
+Components Needed:
+Arduino Uno
+Fire sensor module
+Buzzer (Alarm)
+Jumper wires
+
+
+Circuit Diagram:
+
+Fire Sensor:
+VCC -> Arduino 5V
+GND -> Arduino GND
+DO (Digital Output) -> Arduino Digital Pin 2
+
+Buzzer:
+Positive (longer leg) -> Arduino Digital Pin 8
+Negative (shorter leg) -> Arduino GND
