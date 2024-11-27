@@ -1,0 +1,24 @@
+#define FIRE_SENSOR_PIN 2    // Pin connected to fire sensor digital output
+#define BUZZER_PIN 8         // Pin connected to buzzer
+
+void setup() {
+  pinMode(FIRE_SENSOR_PIN, INPUT);  // Set fire sensor as input
+  pinMode(BUZZER_PIN, OUTPUT);      // Set buzzer as output
+  Serial.begin(9600);
+}
+
+void loop() {
+  int fireStatus = digitalRead(FIRE_SENSOR_PIN);
+  Serial.print("Sensor Value: ");   // Print the sensor status for debugging
+  Serial.println(fireStatus);
+
+  if (fireStatus == LOW) {           // If fire is detected (sensor gives LOW signal)
+    digitalWrite(BUZZER_PIN, HIGH);  // Turn on buzzer
+    Serial.println("Fire detected! Alarm ON");
+  } else {
+    digitalWrite(BUZZER_PIN, LOW);   // Turn off buzzer if no fire
+    Serial.println("No fire detected.");
+  }
+
+  delay(500);  // Wait for half a second before checking again
+}
